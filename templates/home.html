@@ -1,0 +1,13 @@
+{% load socialaccount %}
+
+<h2>Center-web.com</h2>
+
+{% if user.is_authenticated %}
+
+<p>Welcom to my website {{ user.username }}</p>
+
+{% else %}
+
+<a href="{% provider_login_url 'github' %}">Sign Up</a>
+
+{% endif %}
